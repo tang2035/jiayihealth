@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>加一健康 - 科技赋能健康生活</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif;
+        }
+        
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            background-color: #f8fafc;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        /* 头部样式 */
+        header {
+            background: linear-gradient(135deg, #1a7f7b 0%, #2d9f8b 100%);
+            color: white;
+            padding: 1.5rem 2rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            z-index: 10;
+        }
+        
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .logo-icon {
+            width: 60px;
+            height: 60px;
+            background-color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .logo-icon i {
+            font-size: 2rem;
+            color: #1a7f7b;
+        }
+        
+        .company-name {
+            font-size: 2.2rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+        }
+        
+        .company-tagline {
+            font-size: 1rem;
+            opacity: 0.9;
+            margin-top: 0.2rem;
+            font-weight: 300;
+        }
+        
+        /* 中间部分样式 */
+        main {
+            flex: 1;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-image {
+            width: 100%;
+            height: 100%;
+            background-image: linear-gradient(rgba(26, 127, 123, 0.85), rgba(45, 159, 139, 0.8)), url('https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            text-align: center;
+            color: white;
+            padding: 2.5rem;
+            border-radius: 16px;
+            background-color: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .hero-title {
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        .hero-subtitle {
+            font-size: 1.4rem;
+            margin-bottom: 2rem;
+            font-weight: 300;
+            opacity: 0.95;
+        }
+        
+        .hero-features {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2.5rem;
+        }
+        
+        .feature {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            max-width: 200px;
+        }
+        
+        .feature-icon {
+            width: 70px;
+            height: 70px;
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+        }
+        
+        .feature-icon i {
+            font-size: 2rem;
+            color: white;
+        }
+        
+        .feature-text {
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+        
+        /* 底部样式 */
+        footer {
+            background-color: #1a2937;
+            color: #cbd5e1;
+            padding: 1.8rem 2rem;
+            text-align: center;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .beian-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #a0aec0;
+            text-decoration: none;
+            font-size: 0.95rem;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+        
+        .beian-link:hover {
+            color: white;
+            background-color: rgba(255, 255, 255, 0.05);
+        }
+        
+        .beian-link i {
+            font-size: 1.1rem;
+        }
+        
+        .copyright {
+            font-size: 0.95rem;
+            color: #94a3b8;
+        }
+        
+        .footer-divider {
+            width: 200px;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.1);
+            margin: 0.5rem 0;
+        }
+        
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                text-align: center;
+                gap: 1rem;
+            }
+            
+            .company-name {
+                font-size: 1.8rem;
+            }
+            
+            .hero-title {
+                font-size: 2.2rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .hero-features {
+                gap: 1.5rem;
+            }
+            
+            .feature {
+                max-width: 150px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            header, main, footer {
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+            
+            .company-name {
+                font-size: 1.6rem;
+            }
+            
+            .hero-title {
+                font-size: 1.8rem;
+            }
+            
+            .hero-content {
+                padding: 1.5rem;
+            }
+            
+            .hero-features {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 头部：Logo和公司名称 -->
+    <header>
+        <div class="header-container">
+            <div class="logo-container">
+                <div class="logo-icon">
+                    <i class="fas fa-heartbeat"></i>
+                </div>
+                <div>
+                    <h1 class="company-name">加一健康</h1>
+                    <p class="company-tagline">科技赋能健康生活</p>
+                </div>
+            </div>
+            <div class="contact-info">
+                <p><i class="fas fa-phone-alt"></i> 400-123-4567</p>
+            </div>
+        </div>
+    </header>
+    
+    <!-- 中间：背景图和内容 -->
+    <main>
+        <div class="hero-image">
+            <div class="hero-content">
+                <h2 class="hero-title">加一健康，为您的健康加一份保障</h2>
+                <p class="hero-subtitle">我们致力于通过科技创新，为您提供全方位、个性化的健康管理解决方案</p>
+                
+                <div class="hero-features">
+                    <div class="feature">
+                        <div class="feature-icon">
+                            <i class="fas fa-user-md"></i>
+                        </div>
+                        <p class="feature-text">专业医疗团队</p>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <p class="feature-text">智能健康监测</p>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon">
+                            <i class="fas fa-calendar-check"></i>
+                        </div>
+                        <p class="feature-text">个性化健康计划</p>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <p class="feature-text">隐私数据保护</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <!-- 底部：备案信息和版权 -->
+    <footer>
+        <div class="footer-content">
+            <a href="https://beian.miit.gov.cn/" target="_blank" class="beian-link">
+                <i class="fas fa-link"></i> 粤ICP备18041289号
+            </a>
+            <div class="footer-divider"></div>
+            <p class="copyright">© 2025 加一健康 版权所有</p>
+        </div>
+    </footer>
+
+    <script>
+        // 添加简单的交互效果
+        document.addEventListener('DOMContentLoaded', function() {
+            // 为备案链接添加点击反馈
+            const beianLink = document.querySelector('.beian-link');
+            beianLink.addEventListener('click', function() {
+                this.style.transform = 'scale(0.98)';
+                setTimeout(() => {
+                    this.style.transform = 'scale(1)';
+                }, 150);
+            });
+            
+            // 为特色功能区域添加悬停效果
+            const features = document.querySelectorAll('.feature');
+            features.forEach(feature => {
+                feature.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-5px)';
+                    this.style.transition = 'transform 0.3s ease';
+                });
+                
+                feature.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0)';
+                });
+            });
+            
+            // 动态更新年份（确保版权年份始终正确）
+            const yearSpan = document.querySelector('.copyright');
+            const currentYear = new Date().getFullYear();
+            yearSpan.innerHTML = yearSpan.innerHTML.replace('2025', currentYear);
+        });
+    </script>
+</body>
+</html>
