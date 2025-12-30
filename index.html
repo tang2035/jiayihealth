@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>加一健康 - 科技赋能健康生活</title>
+    <title>创新科技有限公司 - 专业企业解决方案</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
@@ -14,349 +14,380 @@
         }
         
         body {
-    display: flex;
-    flex-direction: column; /* 保持你的上中下垂直布局 */
-    align-items: center; /* 关键：使内部所有块级元素水平居中 */
-    min-height: 100vh; /* 确保body至少占满整个视窗高度 */
-}
-        header, main, .hero-image, footer {
-    width: 100%;
-    box-sizing: border-box;
-}
-        /* 头部样式 */
-        header {
-            background: linear-gradient(135deg, #1a7f7b 0%, #2d9f8b 100%);
-            color: white;
-            padding: 1.5rem 2rem;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-            z-index: 10;
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
         }
         
-        .header-container {
+        .container {
+            flex: 1;
+        }
+        
+        /* 顶部区域样式 - 左右布局 */
+        .header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 40px 0;
+        }
+        
+        .header-content {
             max-width: 1200px;
             margin: 0 auto;
             display: flex;
             align-items: center;
             justify-content: space-between;
+            padding: 0 20px;
+            flex-wrap: wrap;
         }
         
-        .logo-container {
+        .logo-section {
             display: flex;
             align-items: center;
-            gap: 1rem;
-        }
-        
-        .logo-icon {
-            width: 60px;
-            height: 60px;
-            background-color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-        
-        .logo-icon i {
-            font-size: 2rem;
-            color: #1a7f7b;
-        }
-        
-        .company-name {
-            font-size: 2.2rem;
-            font-weight: 700;
-            letter-spacing: 1px;
-            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
-        }
-        
-        .company-tagline {
-            font-size: 1rem;
-            opacity: 0.9;
-            margin-top: 0.2rem;
-            font-weight: 300;
-        }
-        
-        /* 中间部分样式 */
-        main {
             flex: 1;
-            position: relative;
-            overflow: hidden;
+            min-width: 300px;
         }
         
-        .hero-image {
-            width: 100%;
-            height: 100%;
-            background-image: linear-gradient(rgba(26, 127, 123, 0.85), rgba(45, 159, 139, 0.8)), url('https://raw.githubusercontent.com/tang2035/jiayihealth/61a413552b0596efec719c59e9b706cb098925ce/beijing.jpg
-');
-            background-size: cover;
-            background-position: center;
+        .logo {
+            width: 100px;
+            height: 100px;
+            background: white;
+            border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 2rem;
+            margin-right: 25px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
         }
         
-        .hero-content {
-            max-width: 800px;
-            text-align: center;
-            color: white;
-            padding: 2.5rem;
-            border-radius: 16px;
-            background-color: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        .logo:hover {
+            transform: scale(1.05);
         }
         
-        .hero-title {
-            font-size: 2.8rem;
+        .logo i {
+            font-size: 50px;
+            color: #2a5298;
+        }
+        
+        .company-info h1 {
+            font-size: 2.5rem;
             font-weight: 700;
-            margin-bottom: 1rem;
-            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
+            margin-bottom: 8px;
+            letter-spacing: 0.5px;
         }
         
-        .hero-subtitle {
-            font-size: 1.4rem;
-            margin-bottom: 2rem;
+        .company-info .tagline {
+            font-size: 1.2rem;
+            opacity: 0.9;
             font-weight: 300;
+        }
+        
+        .intro-section {
+            flex: 1;
+            min-width: 300px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 25px;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .intro-section h2 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: #fff;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+            padding-bottom: 8px;
+            display: inline-block;
+        }
+        
+        .intro-section p {
+            font-size: 1.05rem;
+            line-height: 1.7;
             opacity: 0.95;
         }
         
-        .hero-features {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 2rem;
-            margin-top: 2.5rem;
+        /* 中部区域样式 - 单张图片 */
+        .main-content {
+            padding: 0;
+            background-color: #f0f2f5;
         }
         
-        .feature {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            max-width: 200px;
+        .single-image-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0;
         }
         
-        .feature-icon {
-            width: 70px;
-            height: 70px;
-            background-color: rgba(255, 255, 255, 0.2);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 1rem;
+        .single-image {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            display: block;
         }
         
-        .feature-icon i {
-            font-size: 2rem;
-            color: white;
-        }
-        
-        .feature-text {
-            font-size: 1.1rem;
-            font-weight: 500;
-        }
-        
-        /* 底部样式 */
-        footer {
-            background-color: #1a2937;
-            color: #cbd5e1;
-            padding: 1.8rem 2rem;
-            text-align: center;
+        /* 底部区域样式 - 两列布局 */
+        .footer {
+            background-color: #1a1a2e;
+            color: #e6e6e6;
+            padding: 50px 0 30px;
         }
         
         .footer-content {
             max-width: 1200px;
             margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            padding: 0 20px;
+        }
+        
+        .footer-section h3 {
+            color: white;
+            font-size: 1.4rem;
+            margin-bottom: 25px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #2a5298;
+        }
+        
+        .contact-info p {
+            margin-bottom: 15px;
             display: flex;
-            flex-direction: column;
             align-items: center;
-            gap: 1rem;
+        }
+        
+        .contact-info i {
+            margin-right: 12px;
+            color: #4d8bff;
+            width: 20px;
+            text-align: center;
+        }
+        
+        .beian-info {
+            background-color: rgba(255, 255, 255, 0.05);
+            padding: 25px;
+            border-radius: 8px;
+            border-left: 4px solid #2a5298;
         }
         
         .beian-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            color: #a0aec0;
+            display: inline-block;
+            background: #2a5298;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 6px;
             text-decoration: none;
+            margin-top: 15px;
+            transition: all 0.3s;
             font-size: 0.95rem;
-            padding: 0.5rem 1rem;
-            border-radius: 4px;
-            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
         
         .beian-link:hover {
-            color: white;
-            background-color: rgba(255, 255, 255, 0.05);
-        }
-        
-        .beian-link i {
-            font-size: 1.1rem;
+            background: #1e3c72;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
         }
         
         .copyright {
-            font-size: 0.95rem;
-            color: #94a3b8;
-        }
-        
-        .footer-divider {
-            width: 200px;
-            height: 1px;
-            background-color: rgba(255, 255, 255, 0.1);
-            margin: 0.5rem 0;
+            text-align: center;
+            margin-top: 50px;
+            padding-top: 25px;
+            border-top: 1px solid #333;
+            color: #aaa;
+            font-size: 0.9rem;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+            padding-left: 20px;
+            padding-right: 20px;
         }
         
         /* 响应式设计 */
-        @media (max-width: 768px) {
-            .header-container {
+        @media (max-width: 992px) {
+            .header-content {
                 flex-direction: column;
-                text-align: center;
-                gap: 1rem;
+                align-items: flex-start;
             }
             
-            .company-name {
-                font-size: 1.8rem;
+            .logo-section {
+                margin-bottom: 30px;
             }
             
-            .hero-title {
-                font-size: 2.2rem;
+            .intro-section {
+                width: 100%;
             }
             
-            .hero-subtitle {
-                font-size: 1.2rem;
+            .single-image {
+                height: 400px;
             }
             
-            .hero-features {
-                gap: 1.5rem;
+            .footer-content {
+                gap: 40px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .header {
+                padding: 30px 0;
             }
             
-            .feature {
-                max-width: 150px;
+            .logo {
+                width: 80px;
+                height: 80px;
+            }
+            
+            .logo i {
+                font-size: 40px;
+            }
+            
+            .company-info h1 {
+                font-size: 2rem;
+            }
+            
+            .single-image {
+                height: 300px;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
             }
         }
         
         @media (max-width: 480px) {
-            header, main, footer {
-                padding-left: 1rem;
-                padding-right: 1rem;
+            .logo-section {
+                flex-direction: column;
+                align-items: flex-start;
             }
             
-            .company-name {
-                font-size: 1.6rem;
+            .logo {
+                margin-bottom: 15px;
+                margin-right: 0;
             }
             
-            .hero-title {
+            .company-info h1 {
                 font-size: 1.8rem;
             }
             
-            .hero-content {
-                padding: 1.5rem;
+            .intro-section {
+                padding: 20px;
             }
             
-            .hero-features {
-                flex-direction: column;
-                align-items: center;
+            .intro-section h2 {
+                font-size: 1.3rem;
+            }
+            
+            .single-image {
+                height: 250px;
             }
         }
     </style>
 </head>
 <body>
-    <!-- 头部：Logo和公司名称 -->
-    <header>
-        <div class="header-container">
-            <div class="logo-container">
-                <div class="logo-icon">
-                    <img src="https://raw.githubusercontent.com/tang2035/jiayihealth/61a413552b0596efec719c59e9b706cb098925ce/logo.png" alt="加一健康Logo" style="width: 80%; height: auto;">
+    <div class="container">
+        <!-- 顶部区域：左侧logo和公司名称，右侧简介 -->
+        <header class="header">
+            <div class="header-content">
+                <div class="logo-section">
+                    <div class="logo">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <div class="company-info">
+                        <h1>创新科技有限公司</h1>
+                        <p class="tagline">专业 创新 卓越 共赢</p>
+                    </div>
                 </div>
-                <div>
-                    <h1 class="company-name">加一健康</h1>
-                    <p class="company-tagline">科技赋能健康生活</p>
-                </div>
-            </div>
-            <div class="contact-info">
-                <p><i class="fas fa-phone-alt"></i> </p>
-            </div>
-        </div>
-    </header>
-    
-    <!-- 中间：背景图和内容 -->
-    <main>
-        <div class="hero-image">
-            <div class="hero-content">
-                <h2 class="hero-title">加一健康，为您的健康加一份保障</h2>
-                <p class="hero-subtitle">我们致力于通过科技创新，为您提供全方位、个性化的健康管理解决方案</p>
                 
-                <div class="hero-features">
-                    <div class="feature">
-                        <div class="feature-icon">
-                            <i class="fas fa-user-md"></i>
-                        </div>
-                        <p class="feature-text">专业</p>
-                    </div>
-                    <div class="feature">
-                        <div class="feature-icon">
-                            <i class="fas fa-mobile-alt"></i>
-                        </div>
-                        <p class="feature-text">智能</p>
-                    </div>
-                    <div class="feature">
-                        <div class="feature-icon">
-                            <i class="fas fa-calendar-check"></i>
-                        </div>
-                        <p class="feature-text">个性化</p>
-                    </div>
-                    <div class="feature">
-                        <div class="feature-icon">
-                            <i class="fas fa-shield-alt"></i>
-                        </div>
-                        <p class="feature-text">隐私</p>
-                    </div>
+                <div class="intro-section">
+                    <h2>公司简介</h2>
+                    <p>创新科技有限公司成立于2010年，是一家专注于企业数字化转型解决方案的高科技公司。我们致力于为客户提供创新的软件开发、云计算服务、人工智能解决方案和大数据分析服务。公司拥有一支经验丰富的技术团队，已成功为超过500家企业提供定制化解决方案，助力企业提升效率、降低成本、实现智能化升级。</p>
+                </div>
+            </div>
+        </header>
+
+        <!-- 中部区域：单张图片展示 -->
+        <section class="main-content">
+            <div class="single-image-container">
+                <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1600&q=80" alt="现代化办公环境" class="single-image">
+            </div>
+        </section>
+    </div>
+
+    <!-- 底部区域：公司信息和备案信息两列 -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>公司信息</h3>
+                <div class="contact-info">
+                    <p><i class="fas fa-map-marker-alt"></i> 地址：北京市海淀区中关村科技园创新大厦15层</p>
+                    <p><i class="fas fa-building"></i> 公司名称：创新科技有限公司</p>
+                    <p><i class="fas fa-phone"></i> 联系电话：010-8888 9999</p>
+                    <p><i class="fas fa-fax"></i> 传真号码：010-8888 9998</p>
+                    <p><i class="fas fa-envelope"></i> 业务邮箱：business@innovatech.com</p>
+                    <p><i class="fas fa-headset"></i> 客服邮箱：support@innovatech.com</p>
+                    <p><i class="fas fa-globe"></i> 官方网站：www.innovatech.com</p>
+                    <p><i class="fas fa-clock"></i> 工作时间：周一至周五 9:00-18:00</p>
+                </div>
+            </div>
+            
+            <div class="footer-section">
+                <h3>备案信息</h3>
+                <div class="beian-info">
+                    <p>本网站已按照国家相关规定完成备案，确保信息真实合法。</p>
+                    <p>备案号：京ICP备 2023012345号-1</p>
+                    <p>网站名称：创新科技有限公司官网</p>
+                    <p>审核日期：2023年6月15日</p>
+                    <a href="https://beian.miit.gov.cn" target="_blank" class="beian-link">
+                        <i class="fas fa-external-link-alt"></i> 工业和信息化部备案管理系统
+                    </a>
+                    <p style="margin-top: 15px; font-size: 0.9rem;">版权所有 &copy; 2010-2023 创新科技有限公司</p>
                 </div>
             </div>
         </div>
-    </main>
-    
-    <!-- 底部：备案信息和版权 -->
-    <footer>
-        <div class="footer-content">
-            <a href="https://beian.miit.gov.cn/" target="_blank" class="beian-link">
-                <i class="fas fa-link"></i> 粤ICP备18041289号
-            </a>
-            <div class="footer-divider"></div>
-            <p class="copyright">© 2025 加一健康 版权所有</p>
+        
+        <div class="copyright">
+            <p>本网站设计内容仅供参考，实际信息以公司官方发布为准 | 隐私政策 | 使用条款</p>
         </div>
     </footer>
 
     <script>
-        // 添加简单的交互效果
+        // 交互效果
         document.addEventListener('DOMContentLoaded', function() {
-            // 为备案链接添加点击反馈
+            // 备案链接点击效果
             const beianLink = document.querySelector('.beian-link');
-            beianLink.addEventListener('click', function() {
-                this.style.transform = 'scale(0.98)';
-                setTimeout(() => {
-                    this.style.transform = 'scale(1)';
-                }, 150);
+            beianLink.addEventListener('click', function(e) {
+                if(!confirm('您即将访问工业和信息化部备案管理系统，确认继续吗？')) {
+                    e.preventDefault();
+                }
             });
             
-            // 为特色功能区域添加悬停效果
-            const features = document.querySelectorAll('.feature');
-            features.forEach(feature => {
-                feature.addEventListener('mouseenter', function() {
-                    this.style.transform = 'translateY(-5px)';
-                    this.style.transition = 'transform 0.3s ease';
-                });
+            // Logo点击效果
+            const logo = document.querySelector('.logo');
+            logo.addEventListener('click', function() {
+                window.scrollTo({top: 0, behavior: 'smooth'});
+            });
+            
+            // 响应式布局调整
+            function adjustLayout() {
+                const headerContent = document.querySelector('.header-content');
+                const introSection = document.querySelector('.intro-section');
                 
-                feature.addEventListener('mouseleave', function() {
-                    this.style.transform = 'translateY(0)';
-                });
-            });
+                if (window.innerWidth <= 992) {
+                    introSection.style.marginTop = '20px';
+                } else {
+                    introSection.style.marginTop = '0';
+                }
+            }
             
-            // 动态更新年份（确保版权年份始终正确）
-            const yearSpan = document.querySelector('.copyright');
-            const currentYear = new Date().getFullYear();
-            yearSpan.innerHTML = yearSpan.innerHTML.replace('2025', currentYear);
+            // 初始调整
+            adjustLayout();
+            
+            // 窗口大小变化时调整
+            window.addEventListener('resize', adjustLayout);
         });
     </script>
 </body>
