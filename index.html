@@ -129,7 +129,7 @@
             border-left: 5px solid #00a8cc;
         }
         
-        /* 轮播图样式 - 优化大尺寸图片 */
+        /* 轮播图样式 - 三张图片 */
         .carousel-section {
             max-width: 1200px;
             margin: 0 auto;
@@ -147,7 +147,7 @@
             position: relative;
             width: 100%;
             height: 0;
-            padding-bottom: 56.25%; /* 16:9 比例，适合大多数图片 */
+            padding-bottom: 66.67%; /* 3:2 比例，更接近您的图片比例 */
             overflow: hidden;
             border-radius: 15px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
@@ -392,7 +392,7 @@
             }
             
             .carousel-container {
-                padding-bottom: 66.67%; /* 3:2 比例，更接近您的图片比例 */
+                padding-bottom: 75%; /* 4:3 比例，在移动端更合适 */
             }
             
             .carousel-btn {
@@ -430,7 +430,7 @@
             }
             
             .carousel-container {
-                padding-bottom: 75%; /* 4:3 比例，在小屏幕上更合适 */
+                padding-bottom: 85%; /* 在更小的屏幕上使用更合适的比例 */
             }
             
             .contact-info p {
@@ -472,7 +472,7 @@
                 </div>
             </div>
             
-            <!-- 轮播图部分 -->
+            <!-- 轮播图部分 - 改为三张图片 -->
             <div class="carousel-section">
                 <h3>公司受邀参展</h3>
                 <div class="carousel-container">
@@ -519,30 +519,6 @@
                                 <p>上海国际成人展</p>
                             </div>
                         </div>
-                        <!-- 轮播图4 -->
-                        <div class="carousel-slide">
-                            <img src="https://raw.githubusercontent.com/tang2035/jiayihealth/9b1b6133bdb8c21c464b1dbd9136f0048ba851d5/shanghai3.JPG" 
-                                 alt="上海国际成人展" 
-                                 data-src="https://raw.githubusercontent.com/tang2035/jiayihealth/9b1b6133bdb8c21c464b1dbd9136f0048ba851d5/shanghai3.JPG"
-                                 loading="lazy"
-                                 class="loading">
-                            <div class="slide-overlay">
-                                <h4>受邀参展</h4>
-                                <p>上海国际成人展</p>
-                            </div>
-                        </div>
-                        <!-- 轮播图5 -->
-                        <div class="carousel-slide">
-                            <img src="https://raw.githubusercontent.com/tang2035/jiayihealth/9b1b6133bdb8c21c464b1dbd9136f0048ba851d5/shanghai4.JPG" 
-                                 alt="上海国际成人展" 
-                                 data-src="https://raw.githubusercontent.com/tang2035/jiayihealth/9b1b6133bdb8c21c464b1dbd9136f0048ba851d5/shanghai4.JPG"
-                                 loading="lazy"
-                                 class="loading">
-                            <div class="slide-overlay">
-                                <h4>受邀参展</h4>
-                                <p>上海国际成人展</p>
-                            </div>
-                        </div>
                     </div>
                     
                     <!-- 轮播按钮 -->
@@ -553,13 +529,11 @@
                         <i class="fas fa-chevron-right"></i>
                     </button>
                     
-                    <!-- 轮播指示点 -->
+                    <!-- 轮播指示点 - 改为三个 -->
                     <div class="carousel-dots">
                         <div class="carousel-dot active" data-index="0"></div>
                         <div class="carousel-dot" data-index="1"></div>
                         <div class="carousel-dot" data-index="2"></div>
-                        <div class="carousel-dot" data-index="3"></div>
-                        <div class="carousel-dot" data-index="4"></div>
                     </div>
                 </div>
             </div>
@@ -603,7 +577,7 @@
             const loadingIndicator = document.getElementById('loadingIndicator');
             
             let currentSlide = 0;
-            const totalSlides = slides.length;
+            const totalSlides = slides.length; // 现在应该是3
             let imagesLoaded = 0;
             
             // 预加载图片
@@ -741,11 +715,11 @@
                 // 根据屏幕宽度调整轮播图比例
                 const carouselContainer = document.querySelector('.carousel-container');
                 if (window.innerWidth < 768) {
-                    // 移动端使用更接近3:2的比例
-                    carouselContainer.style.paddingBottom = '66.67%';
+                    // 移动端使用4:3比例
+                    carouselContainer.style.paddingBottom = '75%';
                 } else {
-                    // 桌面端使用16:9比例
-                    carouselContainer.style.paddingBottom = '56.25%';
+                    // 桌面端使用3:2比例
+                    carouselContainer.style.paddingBottom = '66.67%';
                 }
             }
             
