@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>加一健康</title>
+    <title>加一健康 - 专业健康管理</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif;
+            font-family: 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif;
         }
         
         body {
@@ -26,11 +26,13 @@
             flex: 1;
         }
         
-        /* 顶部区域样式 - 左右布局 */
+        /* 顶部区域样式 - 简化版 */
         .header {
-            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            background: linear-gradient(135deg, #0c7b93 0%, #00a8cc 100%);
             color: white;
-            padding: 40px 0;
+            padding: 20px 0;
+            position: relative;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         }
         
         .header-content {
@@ -40,176 +42,280 @@
             align-items: center;
             justify-content: space-between;
             padding: 0 20px;
-            flex-wrap: wrap;
         }
         
         .logo-section {
             display: flex;
             align-items: center;
-            flex: 1;
-            min-width: 300px;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        
+        .logo-section:hover {
+            transform: translateY(-2px);
         }
         
         .logo {
-            width: 100px;
-            height: 100px;
+            width: 60px;
+            height: 60px;
             background: white;
-            border-radius: 12px;
+            border-radius: 10px;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-right: 25px;
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-            transition: transform 0.3s ease;
+            margin-right: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
             overflow: hidden;
-        }
-        
-        .logo:hover {
-            transform: scale(1.05);
+            border: 2px solid rgba(255, 255, 255, 0.6);
         }
         
         /* 图片Logo的样式 */
         .logo img {
-            width: 100%;
-            height: 100%;
+            width: 85%;
+            height: 85%;
             object-fit: contain;
-            border-radius: 12px;
+            border-radius: 5px;
             display: block;
         }
         
-        /* 隐藏字体图标 */
-        .logo i {
-            display: none;
-        }
-        
         .company-info h1 {
-            font-size: 2.5rem;
+            font-size: 1.8rem;
             font-weight: 700;
-            margin-bottom: 8px;
             letter-spacing: 0.5px;
+            color: white;
         }
         
-        .company-info .tagline {
-            font-size: 1.2rem;
-            opacity: 0.9;
-            font-weight: 300;
+        /* 中部区域样式 */
+        .main-content {
+            padding: 50px 0;
         }
         
+        /* 公司简介部分 */
         .intro-section {
-            flex: 1;
-            min-width: 300px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 10px;
-            padding: 25px;
-            backdrop-filter: blur(5px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            max-width: 1000px;
+            margin: 0 auto 50px;
+            padding: 0 20px;
+            text-align: center;
         }
         
         .intro-section h2 {
-            font-size: 1.5rem;
-            margin-bottom: 15px;
-            color: #fff;
-            border-bottom: 2px solid rgba(255, 255, 255, 0.3);
-            padding-bottom: 8px;
+            font-size: 2.2rem;
+            margin-bottom: 25px;
+            color: #0c7b93;
+            position: relative;
             display: inline-block;
         }
         
-        .intro-section p {
-            font-size: 1.05rem;
-            line-height: 1.7;
-            opacity: 0.95;
+        .intro-section h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, #00d2ff, #00b4db);
+            border-radius: 2px;
         }
         
-        /* 中部区域样式 - 单张图片 */
-        .main-content {
-            padding: 0;
-            background-color: #f0f2f5;
+        .intro-content {
+            background: white;
+            border-radius: 15px;
+            padding: 35px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+            line-height: 1.8;
+            font-size: 1.1rem;
+            color: #444;
+            border-left: 5px solid #00a8cc;
         }
         
-        .single-image-container {
-            max-width: 1400px;
+        /* 轮播图样式 */
+        .carousel-section {
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 0;
+            padding: 0 20px;
         }
         
-        .single-image {
+        .carousel-section h3 {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 30px;
+            color: #0c7b93;
+        }
+        
+        .carousel-container {
+            position: relative;
             width: 100%;
             height: 500px;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .carousel-slides {
+            display: flex;
+            transition: transform 0.8s ease;
+            height: 100%;
+        }
+        
+        .carousel-slide {
+            min-width: 100%;
+            height: 100%;
+            position: relative;
+        }
+        
+        .carousel-slide img {
+            width: 100%;
+            height: 100%;
             object-fit: cover;
             display: block;
         }
         
-        /* 底部区域样式 - 两列布局 */
+        .slide-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+            color: white;
+            padding: 25px;
+        }
+        
+        .slide-overlay h4 {
+            font-size: 1.5rem;
+            margin-bottom: 8px;
+        }
+        
+        .carousel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.8);
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: #0c7b93;
+            cursor: pointer;
+            transition: all 0.3s;
+            z-index: 10;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        .carousel-btn:hover {
+            background: white;
+            transform: translateY(-50%) scale(1.1);
+        }
+        
+        .carousel-btn.prev {
+            left: 20px;
+        }
+        
+        .carousel-btn.next {
+            right: 20px;
+        }
+        
+        .carousel-dots {
+            position: absolute;
+            bottom: 20px;
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            z-index: 10;
+        }
+        
+        .carousel-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .carousel-dot.active {
+            background: white;
+            transform: scale(1.2);
+        }
+        
+        /* 底部区域样式 */
         .footer {
-            background-color: #1a1a2e;
+            background: linear-gradient(135deg, #0a1931 0%, #1a1a2e 100%);
             color: #e6e6e6;
             padding: 50px 0 30px;
+            position: relative;
+        }
+        
+        .footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #00d2ff, #00b4db);
         }
         
         .footer-content {
-            max-width: 1200px;
+            max-width: 800px;
             margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
             padding: 0 20px;
+            text-align: center;
         }
         
         .footer-section h3 {
             color: white;
-            font-size: 1.4rem;
-            margin-bottom: 25px;
+            font-size: 1.6rem;
+            margin-bottom: 30px;
             padding-bottom: 12px;
-            border-bottom: 2px solid #2a5298;
+            border-bottom: 2px solid #00b4db;
+            display: inline-block;
         }
         
         .contact-info p {
             margin-bottom: 15px;
             display: flex;
             align-items: center;
+            justify-content: center;
         }
         
         .contact-info i {
             margin-right: 12px;
-            color: #4d8bff;
+            color: #00d2ff;
             width: 20px;
             text-align: center;
         }
         
-        .beian-info {
-            background-color: rgba(255, 255, 255, 0.05);
-            padding: 25px;
-            border-radius: 8px;
-            border-left: 4px solid #2a5298;
-        }
-        
+        /* 备案号链接样式 */
         .beian-link {
-            display: inline-block;
-            background: #2a5298;
-            color: white;
-            padding: 10px 20px;
-            border-radius: 6px;
+            color: #00d2ff;
             text-decoration: none;
-            margin-top: 15px;
             transition: all 0.3s;
             font-size: 0.95rem;
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 2px 6px;
+            border-radius: 3px;
         }
         
         .beian-link:hover {
-            background: #1e3c72;
-            transform: translateY(-2px);
-            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+            color: #7aa6ff;
+            text-decoration: underline;
+            background-color: rgba(0, 210, 255, 0.1);
         }
         
         .copyright {
             text-align: center;
             margin-top: 50px;
             padding-top: 25px;
-            border-top: 1px solid #333;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
             color: #aaa;
             font-size: 0.9rem;
-            max-width: 1200px;
+            max-width: 800px;
             margin-left: auto;
             margin-right: auto;
             padding-left: 20px;
@@ -217,113 +323,183 @@
         }
         
         /* 响应式设计 */
-        @media (max-width: 992px) {
-            .header-content {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-            
-            .logo-section {
-                margin-bottom: 30px;
-            }
-            
-            .intro-section {
-                width: 100%;
-            }
-            
-            .single-image {
-                height: 400px;
-            }
-            
-            .footer-content {
-                gap: 40px;
-            }
-        }
-        
         @media (max-width: 768px) {
             .header {
-                padding: 30px 0;
+                padding: 15px 0;
             }
             
             .logo {
-                width: 80px;
-                height: 80px;
+                width: 50px;
+                height: 50px;
             }
             
             .company-info h1 {
-                font-size: 2rem;
+                font-size: 1.5rem;
             }
             
-            .single-image {
-                height: 300px;
+            .intro-section {
+                margin-bottom: 30px;
             }
             
-            .footer-content {
-                grid-template-columns: 1fr;
-                gap: 30px;
+            .intro-section h2 {
+                font-size: 1.8rem;
+            }
+            
+            .intro-content {
+                padding: 25px;
+                font-size: 1rem;
+            }
+            
+            .carousel-container {
+                height: 350px;
+            }
+            
+            .carousel-btn {
+                width: 40px;
+                height: 40px;
+                font-size: 1.2rem;
+            }
+            
+            .carousel-btn.prev {
+                left: 10px;
+            }
+            
+            .carousel-btn.next {
+                right: 10px;
+            }
+            
+            .slide-overlay {
+                padding: 15px;
+            }
+            
+            .slide-overlay h4 {
+                font-size: 1.2rem;
             }
         }
         
         @media (max-width: 480px) {
-            .logo-section {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-            
             .logo {
-                margin-bottom: 15px;
-                margin-right: 0;
+                width: 45px;
+                height: 45px;
+                margin-right: 10px;
             }
             
             .company-info h1 {
-                font-size: 1.8rem;
-            }
-            
-            .intro-section {
-                padding: 20px;
-            }
-            
-            .intro-section h2 {
                 font-size: 1.3rem;
             }
             
-            .single-image {
-                height: 250px;
+            .carousel-container {
+                height: 280px;
+            }
+            
+            .contact-info p {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .contact-info i {
+                margin-right: 0;
+                margin-bottom: 5px;
             }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <!-- 顶部区域：左侧logo和公司名称，右侧简介 -->
+        <!-- 顶部区域：Logo和公司名称 -->
         <header class="header">
             <div class="header-content">
-                <div class="logo-section">
-                    <!-- Logo已修改为图片形式 -->
+                <a href="#" class="logo-section">
                     <div class="logo">
-                        <img src="https://raw.githubusercontent.com/tang2035/jiayihealth/61a413552b0596efec719c59e9b706cb098925ce/logo.png" alt="加一健康 Logo">
+                        <img src="https://raw.githubusercontent.com/Tang2035/jiayihealth/main/logo.png" alt="加一健康 Logo">
                     </div>
                     <div class="company-info">
                         <h1>加一健康</h1>
                     </div>
-                </div>
-                
-                <div class="intro-section">
-                    <h2>公司简介</h2>
-                    <p>深圳市加一健康管理有限公司创建于2015年，是一家以保健用品、养生用品的技术开发与销售，健康养生管理咨询，专业的私人健康方案定制服务为一体的综合性企业。</p>
-                </div>
+                </a>
             </div>
         </header>
 
-        <!-- 中部区域：单张图片展示 -->
+        <!-- 中部区域：公司简介和图片轮播 -->
         <section class="main-content">
-            <div class="single-image-container">
-                <img src="https://raw.githubusercontent.com/tang2035/jiayihealth/61a413552b0596efec719c59e9b706cb098925ce/beijing.jpg" alt="" class="single-image">
+            <!-- 公司简介部分 -->
+            <div class="intro-section">
+                <h2>公司简介</h2>
+                <div class="intro-content">
+                    <p>深圳市加一健康管理有限公司创建于2015年，是一家以保健用品、养生用品的技术开发与销售，健康养生管理咨询，专业的私人健康方案定制服务为一体的综合性企业。我们致力于通过科学的管理方案和专业的咨询服务，为客户提供全方位的健康解决方案，让每个人都能享受到专业、个性化的健康管理服务。</p>
+                    <p style="margin-top: 15px;">公司拥有专业的健康管理团队，结合现代健康管理理念和传统养生智慧，为每一位客户量身定制健康方案，帮助客户建立科学的生活方式，提升健康水平，实现生活质量的全面提升。</p>
+                </div>
+            </div>
+            
+            <!-- 轮播图部分 -->
+            <div class="carousel-section">
+                <h3>公司环境与项目展示</h3>
+                <div class="carousel-container">
+                    <div class="carousel-slides">
+                        <!-- 轮播图1 -->
+                        <div class="carousel-slide">
+                            <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80" alt="现代化办公环境">
+                            <div class="slide-overlay">
+                                <h4>现代化办公环境</h4>
+                                <p>舒适创新的办公空间，激发团队创造力与协作精神</p>
+                            </div>
+                        </div>
+                        <!-- 轮播图2 -->
+                        <div class="carousel-slide">
+                            <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80" alt="专业团队协作">
+                            <div class="slide-overlay">
+                                <h4>专业团队协作</h4>
+                                <p>经验丰富的技术团队，专注于解决客户复杂的技术挑战</p>
+                            </div>
+                        </div>
+                        <!-- 轮播图3 -->
+                        <div class="carousel-slide">
+                            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80" alt="数据分析项目">
+                            <div class="slide-overlay">
+                                <h4>健康数据分析</h4>
+                                <p>运用大数据分析技术，为客户提供精准的健康评估</p>
+                            </div>
+                        </div>
+                        <!-- 轮播图4 -->
+                        <div class="carousel-slide">
+                            <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80" alt="客户服务中心">
+                            <div class="slide-overlay">
+                                <h4>客户服务中心</h4>
+                                <p>提供7x24小时在线咨询服务，及时响应客户需求</p>
+                            </div>
+                        </div>
+                        <!-- 轮播图5 -->
+                        <div class="carousel-slide">
+                            <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80" alt="健康产品展示">
+                            <div class="slide-overlay">
+                                <h4>健康产品展示区</h4>
+                                <p>展示公司自主研发的各类健康产品和解决方案</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 轮播按钮 -->
+                    <button class="carousel-btn prev">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="carousel-btn next">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                    
+                    <!-- 轮播指示点 -->
+                    <div class="carousel-dots">
+                        <div class="carousel-dot active" data-index="0"></div>
+                        <div class="carousel-dot" data-index="1"></div>
+                        <div class="carousel-dot" data-index="2"></div>
+                        <div class="carousel-dot" data-index="3"></div>
+                        <div class="carousel-dot" data-index="4"></div>
+                    </div>
+                </div>
             </div>
         </section>
     </div>
 
-    <!-- 底部区域：公司信息和备案信息两列 -->
+    <!-- 底部区域：公司信息和备案信息 -->
     <footer class="footer">
         <div class="footer-content">
             <div class="footer-section">
@@ -333,19 +509,95 @@
                     <p><i class="fas fa-building"></i> 公司名称：深圳市加一健康管理有限公司</p>
                     <p><i class="fas fa-phone"></i> 联系电话：0755-23778906</p>
                     <p><i class="fas fa-clock"></i> 工作时间：周一至周五 9:00-18:00</p>
-                    <p><i class="fas fa-external-link-alt"></i> <a href="https://beian.miit.gov.cn/#/Integrated/index" style="color: #4d8bff;">备案号：粤ICP备18041289号</a></p>
+                    <p><i class="fas fa-external-link-alt"></i> 
+                        <a href="https://beian.miit.gov.cn/#/Integrated/index" class="beian-link">
+                            备案号：粤ICP备18041289号
+                        </a>
+                    </p>
                 </div>
             </div>
         </div>
         
         <div class="copyright">
-            <p></p>
+            <p>本网站设计内容仅供参考，实际信息以公司官方发布为准</p>
         </div>
     </footer>
 
     <script>
-        // 交互效果
+        // 轮播图功能
         document.addEventListener('DOMContentLoaded', function() {
+            // 轮播图元素
+            const carouselSlides = document.querySelector('.carousel-slides');
+            const slides = document.querySelectorAll('.carousel-slide');
+            const prevBtn = document.querySelector('.carousel-btn.prev');
+            const nextBtn = document.querySelector('.carousel-btn.next');
+            const dots = document.querySelectorAll('.carousel-dot');
+            
+            let currentSlide = 0;
+            const totalSlides = slides.length;
+            
+            // 更新轮播图位置
+            function updateCarousel() {
+                carouselSlides.style.transform = `translateX(-${currentSlide * 100}%)`;
+                
+                // 更新指示点状态
+                dots.forEach((dot, index) => {
+                    if (index === currentSlide) {
+                        dot.classList.add('active');
+                    } else {
+                        dot.classList.remove('active');
+                    }
+                });
+            }
+            
+            // 下一张
+            function nextSlide() {
+                currentSlide = (currentSlide + 1) % totalSlides;
+                updateCarousel();
+            }
+            
+            // 上一张
+            function prevSlide() {
+                currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+                updateCarousel();
+            }
+            
+            // 自动轮播
+            let autoSlideInterval = setInterval(nextSlide, 5000);
+            
+            // 重置自动轮播计时器
+            function resetAutoSlide() {
+                clearInterval(autoSlideInterval);
+                autoSlideInterval = setInterval(nextSlide, 5000);
+            }
+            
+            // 事件监听
+            prevBtn.addEventListener('click', () => {
+                prevSlide();
+                resetAutoSlide();
+            });
+            
+            nextBtn.addEventListener('click', () => {
+                nextSlide();
+                resetAutoSlide();
+            });
+            
+            // 指示点点击事件
+            dots.forEach(dot => {
+                dot.addEventListener('click', () => {
+                    currentSlide = parseInt(dot.getAttribute('data-index'));
+                    updateCarousel();
+                    resetAutoSlide();
+                });
+            });
+            
+            // 点击Logo和公司名称回到顶部
+            const logoSection = document.querySelector('.logo-section');
+            logoSection.addEventListener('click', function(e) {
+                e.preventDefault();
+                window.scrollTo({top: 0, behavior: 'smooth'});
+            });
+            
             // 备案链接点击效果
             const beianLink = document.querySelector('.beian-link');
             beianLink.addEventListener('click', function(e) {
@@ -354,22 +606,35 @@
                 }
             });
             
-            // Logo点击效果
-            const logo = document.querySelector('.logo');
-            logo.addEventListener('click', function() {
-                window.scrollTo({top: 0, behavior: 'smooth'});
+            // 触摸滑动支持
+            let startX = 0;
+            let endX = 0;
+            const carouselContainer = document.querySelector('.carousel-container');
+            
+            carouselContainer.addEventListener('touchstart', (e) => {
+                startX = e.touches[0].clientX;
+            });
+            
+            carouselContainer.addEventListener('touchend', (e) => {
+                endX = e.changedTouches[0].clientX;
+                const diffX = startX - endX;
+                
+                // 滑动距离大于50px才切换
+                if (Math.abs(diffX) > 50) {
+                    if (diffX > 0) {
+                        // 向左滑动，下一张
+                        nextSlide();
+                    } else {
+                        // 向右滑动，上一张
+                        prevSlide();
+                    }
+                    resetAutoSlide();
+                }
             });
             
             // 响应式布局调整
             function adjustLayout() {
-                const headerContent = document.querySelector('.header-content');
-                const introSection = document.querySelector('.intro-section');
-                
-                if (window.innerWidth <= 992) {
-                    introSection.style.marginTop = '20px';
-                } else {
-                    introSection.style.marginTop = '0';
-                }
+                // 可根据需要添加响应式调整
             }
             
             // 初始调整
